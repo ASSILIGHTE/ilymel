@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #ffe4ec;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0f0c1b;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff9fba;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff6f91;
+}
+
+/* Glassmorphism Styles */
+.glass-pink {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.dark .glass-pink {
+  background: rgba(29, 23, 48, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 179, 198, 0.15);
+}
+
+.glass-card {
+  background: rgba(255, 240, 245, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 200, 216, 0.6);
+}
+
+.dark .glass-card {
+  background: rgba(37, 28, 58, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 179, 198, 0.2);
+}
+
+/* Scrapbook Tape Effect */
+.tape-top-left {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  width: 60px;
+  height: 24px;
+  background-color: rgba(255, 228, 236, 0.85);
+  transform: rotate(-12deg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-left: 2px dashed rgba(255, 111, 145, 0.4);
+  border-right: 2px dashed rgba(255, 111, 145, 0.4);
+  z-index: 10;
+}
+
+.tape-top-right {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 60px;
+  height: 24px;
+  background-color: rgba(255, 228, 236, 0.85);
+  transform: rotate(10deg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-left: 2px dashed rgba(255, 111, 145, 0.4);
+  border-right: 2px dashed rgba(255, 111, 145, 0.4);
+  z-index: 10;
+}
+
+/* Hide cursor on mobile devices */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Heart Pop Effect */
+@keyframes heartBurst {
+  0% {
+    transform: scale(0.2) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) translate(var(--tw-translate-x, 0), var(--tw-translate-y, -100px));
+    opacity: 0;
+  }
+}
+
+.heart-burst {
+  animation: heartBurst 1s ease-out forwards;
+}
+
+/* Sparkle Floating Animation */
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.animate-float-particle {
+  animation: floatParticle 3s ease-out forwards;
+}
+
+.clip-path-triangle {
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
